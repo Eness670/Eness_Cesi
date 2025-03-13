@@ -23,7 +23,7 @@ jobs:
           path: build-output.txt
 
 
-  test:
+  job_2:
     needs: build
     runs-on: ubuntu-latest
     steps:
@@ -31,9 +31,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build-outputv2
+      - shell: bash
+          run: |
+            cat build-output.txt
+
       - name: Checkout Code
         uses: actions/checkout@v2
-
-      - name: Use Build Output
-        run: |
-            cat build-outputv2
