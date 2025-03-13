@@ -14,7 +14,7 @@ jobs:
       - name: Build Step
         id: build
         run: |
-          echo "This is the build output." > build_output.txt
+          echo "This is the build output." > build-output.txt
 
       - name: Upload Build Output
         uses: actions/upload-artifact@v4
@@ -37,4 +37,4 @@ jobs:
 
       - name: Use Build Output
         run: |
-            cat build_output.txt
+            cat build-output.txt
